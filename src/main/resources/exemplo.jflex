@@ -18,10 +18,11 @@ DoubleTabComment = "//" .* {LineTerminator}?
 OpenCloseComment = "/*" [^] "*/"
 Comment = {DoubleTabComment} | {OpenCloseComment}
 Whitespace = [ \n\t\r\f] | {LineTerminator} | {Comment}
-ReservedWord = "boolean" | "class" | "public" | "extends" | "static" | "void" | "main" | "String" | "int" | "while" | "if" | "else" | "return" | "length" | "true" | "false" | "this" | "new" | "System.out.printLn"
+ReservedWord = "boolean" | "class" | "public" | "extends" | "static" | "void" | "main" | "String" | "int" | "while" | "if" | "else" | "return" | "length" | "true" | "false" | "this" | "new" | "System.out.println"
 Operator = "&&" | "<" | "==" | "!=" | "+" | "-" | "*" | "!"
 DelimitationPunctuation = [;.,=(){}\[\]]
 Identifier = ([a-zA-Z] | [_]) [a-zA-Z0-9_]*
+Integer = [0]
 IntegerLiterals = [1-9][0-9]*
 
 /* Insira as regras léxicas abaixo */
@@ -34,6 +35,7 @@ IntegerLiterals = [1-9][0-9]*
 {DelimitationPunctuation}	{System.out.println("Token DP: " + yytext());}
 {Identifier}				{System.out.println("Token Id: " + yytext());}
 {IntegerLiterals}			{System.out.println("Token IL: " + yytext());}
+{Integer}					{System.out.println("Token In: " + yytext());}
     
 /* Insira as regras léxicas no espaço acima */     
      
