@@ -27,6 +27,13 @@ IntegerLiterals = [1-9][0-9]*
 /* Insira as regras léxicas abaixo */
 
 %%
+
+{Whitespace}				{}
+{ReservedWord}				{System.out.println("Token RW: " + yytext());}
+{Operator}					{System.out.println("Token Op: " + yytext());}
+{DelimitationPunctuation}	{System.out.println("Token DP: " + yytext());}
+{Identifier}				{System.out.println("Token Id: " + yytext());}
+{IntegerLiterals}			{System.out.println("Token IL: " + yytext());}
     
 /* Insira as regras léxicas no espaço acima */     
      
