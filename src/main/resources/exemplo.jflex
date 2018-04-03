@@ -15,7 +15,7 @@ package atividade1;
 
 LineTerminator = [\r\n] | \r\n
 DoubleTabComment = "//" .* {LineTerminator}?
-OpenCloseComment = "/*" [^] "*/"
+OpenCloseComment = "/*" [^]* "*/"
 Comment = {DoubleTabComment} | {OpenCloseComment}
 Whitespace = [ \n\t\r\f] | {LineTerminator} | {Comment}
 ReservedWord = "boolean" | "class" | "public" | "extends" | "static" | "void" | "main" | "String" | "int" | "while" | "if" | "else" | "return" | "length" | "true" | "false" | "this" | "new" | "System.out.println"
